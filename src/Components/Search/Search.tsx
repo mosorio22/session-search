@@ -37,7 +37,7 @@ const Search = (props:
 
     //function to set state var for predicate select
     //also resets operator state
-    function handlePredicateChange (predicateValue: string): void {
+    const handlePredicateChange = (predicateValue: string): void => {
         setPredicateValue(predicateValue);
         setOperatorValue("equals");
         props.search.predicate = predicateValue;
@@ -64,7 +64,7 @@ const Search = (props:
     ];
 
     //function to set state var for operator select
-    function handleOperatorChange (operatorValue: string): void {
+    const handleOperatorChange = (operatorValue: string): void => {
         setOperatorValue(operatorValue);
         props.search.operator = operatorValue;
     };
@@ -72,13 +72,13 @@ const Search = (props:
     //INPUT
 
     //function to set state var for 1st input
-    function handleInputOneChange (event: React.ChangeEvent<HTMLInputElement>): void {
+    const handleInputOneChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
         setInputOneValue(event.target.value);
         props.search.inputOne = event.target.value;
     };
 
     //function to set state var for 2nd input
-    function handleInputTwoChange (event: React.ChangeEvent<HTMLInputElement>): void {
+    const handleInputTwoChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
         setInputTwoValue(event.target.value);
         props.search.inputTwo = event.target.value;
     };

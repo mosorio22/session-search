@@ -2,7 +2,7 @@ import * as React from "react";
 import Search from "../Search/Search";
 import './SearchMenu.css';
 
-function SearchMenu() {
+const SearchMenu = () => {
 
     //state for searches
     const [searches, setSearches] = React.useState([{predicate:"domain", operator:"=", inputOne:"", inputTwo:""}]);
@@ -11,7 +11,7 @@ function SearchMenu() {
     const [query, setQuery] = React.useState("");
 
     //function to set state var for searches
-    function handleAddSearches(): void {
+    const handleAddSearches = (): void => {
         //only allow max of 10 searches at once
         if(searches.length < 10) {
             setSearches(searches => [...searches, {predicate:"domain", operator:"=", inputOne:"", inputTwo:""}]);
@@ -19,7 +19,7 @@ function SearchMenu() {
     }
 
     //function to remove individual search
-    function handleRemoval(i: number): void {
+    const handleRemoval = (i: number): void => {
         //if only one searh remains, reset
         if (searches.length === 1) {
             handleReset();
@@ -31,7 +31,7 @@ function SearchMenu() {
     }
 
     //function to clear state on reset
-    function handleReset(): void {
+    const handleReset = (): void => {
         setSearches([{predicate:"domain", operator:"=", inputOne:"", inputTwo:""}]);
     }
 
@@ -42,7 +42,7 @@ function SearchMenu() {
     const numericList: Array<string> = ["visits", "screen_width", "screen_height", "page_response"];
 
     //function to generate SQL queries
-    function handleQuery(): void {
+    const handleQuery = (): void => {
         let queryString = "SELECT id FROM session WHERE ";
         let queryErrors = [];
         for (let i = 0; i < searches.length; i++) {

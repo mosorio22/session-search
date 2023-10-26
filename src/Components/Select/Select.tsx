@@ -1,8 +1,8 @@
 import React, { ChangeEvent } from 'react';
 import './Select.css';
 
-function Select ({ value, options, onChange}: {value: string, options: Array<{label: string, value: string}>, onChange: Function}) {
-  function handleChange(event: React.ChangeEvent<HTMLSelectElement>): void {
+const Select = ({ value, options, onChange}: {value: string, options: Array<{label: string, value: string}>, onChange: Function}) => {
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
     onChange(event.target.value);
   }
   return (
