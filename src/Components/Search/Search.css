@@ -1,0 +1,22 @@
+.operator-inputs {
+    display: flex;
+}
+
+.searchbar-wrapper {
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid;
+}
+
+.close {
+    margin-right: 8px;
+    background: none;
+    border: 0;
+}
+
+
+.search-inputs {
+display: flex;
+}
+  

@@ -1,0 +1,10 @@
+select {
+    border-radius: 4px;
+    min-width: 33%;
+    margin-right: 10px;
+  }
+
+select option {
+    background: white;
+}
+  

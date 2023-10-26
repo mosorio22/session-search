@@ -1,13 +1,17 @@
 import * as React from "react";
-import Search from "./Search";
+import Search from "../Search/Search";
+import './SearchMenu.css';
 
 function SearchMenu() {
 
     //state for searches
     const [searches, setSearches] = React.useState([{predicate:"domain", operator:"=", inputOne:"", inputTwo:""}]);
 
+    //state for query
+    const [query, setQuery] = React.useState("");
+
     //function to set state var for searches
-    function handleAddSearches() {
+    function handleAddSearches(): void {
         //only allow max of 10 searches at once
         if(searches.length < 10) {
             setSearches(searches => [...searches, {predicate:"domain", operator:"=", inputOne:"", inputTwo:""}]);
@@ -15,7 +19,7 @@ function SearchMenu() {
     }
 
     //function to remove individual search
-    function handleRemoval(i) {
+    function handleRemoval(i: number): void {
         //if only one searh remains, reset
         if (searches.length === 1) {
             handleReset();
@@ -27,21 +31,18 @@ function SearchMenu() {
     }
 
     //function to clear state on reset
-    function handleReset() {
+    function handleReset(): void {
         setSearches([{predicate:"domain", operator:"=", inputOne:"", inputTwo:""}]);
     }
 
-    //state for query
-    const [query, setQuery] = React.useState("");
-
     //list for conditional rendering of queries
-    const diffOptionQueries = ["BETWEEN", "STARTS_WITH", "CONTAINS", "IN"];
+    const diffOptionQueries: Array<string> = ["BETWEEN", "STARTS_WITH", "CONTAINS", "IN"];
 
     //list of predicates that look for numbers
-    const numericList = ["visits", "screen_width", "screen_height", "page_response"];
+    const numericList: Array<string> = ["visits", "screen_width", "screen_height", "page_response"];
 
     //function to generate SQL queries
-    function handleQuery() {
+    function handleQuery(): void {
         let queryString = "SELECT id FROM session WHERE ";
         let queryErrors = [];
         for (let i = 0; i < searches.length; i++) {
@@ -128,7 +129,7 @@ function SearchMenu() {
         <div className="search-menu">
             <div className="search-builder">
                 {getSearches}
-                <button onClick={handleAddSearches}>And</button>
+                <button className="and-button" onClick={handleAddSearches}>And</button>
             </div>
             <div className="button-section">
                 <button onClick={handleQuery}>Search</button>

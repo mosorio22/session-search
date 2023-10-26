@@ -1,0 +1,12 @@
+.and-button {
+    background-color:  #4da6ff;
+    color: white;
+    border: hidden;
+    border-radius: 3px;
+    padding: 0.2em 0.8em
+}
+
+.search-builder {
+    max-width: 80%;
+  }
+  
