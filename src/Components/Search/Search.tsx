@@ -1,6 +1,6 @@
 import * as React from "react";
 import Select from "../Select/Select";
-import './Search.css';
+import './Search.scss';
 import { ChangeEvent } from "react";
 
 const Search = (props: 

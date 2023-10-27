@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react';
-import './Select.css';
+import './Select.scss';
 
 const Select = ({ value, options, onChange}: {value: string, options: Array<{label: string, value: string}>, onChange: Function}) => {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
